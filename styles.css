@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/lato-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/lato-bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/lato-italic.ttf") format("truetype");
+}
+
 :root {
   --background: #fbfbfa;
   --text: #111111;
@@ -16,9 +40,9 @@ body {
   overflow-wrap: break-word;
   background: var(--background);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Lato, Verdana, Helvetica, sans-serif;
   font-size: 14px;
-  line-height: 1.23;
+  line-height: normal;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -40,9 +64,9 @@ main {
 h1 {
   margin: 0 0 15px;
   text-align: center;
-  font-size: 34px;
-  line-height: 1.2;
-  font-weight: 700;
+  font-size: 32px;
+  line-height: normal;
+  font-weight: 400;
 }
 
 h2 {
@@ -135,6 +159,39 @@ a:focus-visible {
   margin-bottom: 48px;
 }
 
+.briefings-intro {
+  width: min(545px, 100%);
+}
+
+.briefings-intro p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.source-note {
+  color: #555555;
+}
+
+.archive-month {
+  margin-top: 48px;
+}
+
+.briefing {
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+.briefing h3,
+.briefing p {
+  margin: 0;
+}
+
+.briefing p + p {
+  margin-top: 4px;
+}
+
 @media (max-width: 620px) {
   main {
     padding-top: 24px;
@@ -151,6 +208,11 @@ a:focus-visible {
   .project {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .briefing {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .detail-row {
